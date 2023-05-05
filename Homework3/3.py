@@ -1,18 +1,27 @@
-#Задание №3
+# Дан список. Найдите сумму элементом с четными индексами
 
-string1 = "Hello, world!"
 
-string2 = "Good job, guys."
+def even_sum(lst):
+    # Здесь пишем код
+    sum_list = sum(lst[::2])
+    return sum_list
 
-print(
-    (string1.replace('He', 'Go')),
-    (string2.replace("Go", 'He'))
-)
+# Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
-print(string1[:2] + string2[2:] + " " + string2[:2] + string1[2:])   #Вариант 1
 
-print(len(string1))   #считаем символы в строках для удобства
+data = [
+    [1, 2, 3, 4, 5, 6, 7],
+    [-1, -2, -3, -4, -5, -6, -7],
+    [99, 56, 209, -308, -12, -18, 42],
+    [-1, -2, -3, 0, 1, 2, 3],
+]
 
-print(len(string2))
+test_data = [
+    16, -16, 338, 0
+]
 
-print((string2[:-13] + string1[2:13]) + " " + (string1[:-11] + string2[2:15]))   #вариант 2
+
+for i, d in enumerate(data):
+    assert even_sum(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
+    print(f'Тестовый набор {d} прошёл проверку')
+print('Всё ок')
